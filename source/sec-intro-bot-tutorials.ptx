@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-intro-bot-tutorials" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Bot Info and Tutorials</title>
+  <introduction>
+    <p> In this class we will the setup referred to as <term>cyber:bot</term>:
+    <ul>
+      <li><p>
+        The brains of our system will be provided by the <url href="https://microbit.org/">micro:bit</url> setup, a tiny micro-controller with some built-in buttons, sound and other sensors. We will warm up with some of the <url href="https://microbit.org/projects/make-it-code-it/?filters=python">micro:bit projects, to get used to the basics of the platform.</url>
+      </p></li>
+      <li><p>
+        We will be primarily using an <url href="https://microbit.org/get-started/user-guide/python-editor/">online Python editor</url> specific to the micro:bit platform.
+      </p></li>
+      <li><p>
+        The <url href="https://www.parallax.com/cyberbot/">cyber:bot</url> is a system that brings together the micro:bit along with a chassis and basic electronic circuit building support. Along with it is a set of libraries to program the system. We will learn how to program the robot to move around and detect the world around it.
+      </p></li>
+      <li>
+        <p>There is a number of <url href="https://learn.parallax.com/book_collection/cyberbot-tutorial-series/">cyber:bot tutorials</url> prepared, and we will go through most of them over the course of the term. They will largely consist of programming using Python and a specific set of libraries.</p>
+      </li>
+    </ul>
+    </p>
+  </introduction>
+  <subsection xml:id="subsec-useful-links">
+    <title>Useful links</title>
+    <p>
+      <ul>
+        <li><url href="https://python.microbit.org/v/3">The online micro:bit Python editor</url></li>
+        <li><url href="https://microbit-micropython.readthedocs.io/en/stable/index.html">The Python API documentation</url></li>
+        <li><url href="https://learn.parallax.com/reference/cyberbot-library-reference/">Cyber:bot API reference</url></li>
+      </ul>
+    </p>
+  </subsection>
+</section>

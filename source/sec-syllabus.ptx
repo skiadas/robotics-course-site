@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-syllabus" number="no" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>CS233 Syllabus</title>
+  <paragraphs>
+    <title>General Info</title>
+    <p>
+      <dl>
+        <li>
+          <title>Title</title>
+          <p>CS233 Introduction to Robotics</p>
+        </li>
+        <li>
+          <title>Instructor</title>
+          <p>Charilaos Skiadas (LYN102, <email>skiadas@hanover.edu</email>)</p>
+        </li>
+        <li>
+          <title>Term</title>
+          <p>Spring 2025-2026</p>
+        </li>
+        <li>
+          <title>Office Hours</title>
+          <p>Every morning by appointment</p>
+        </li>
+        <li>
+          <title>Class Times</title>
+          <p>MTWRF 12:30pm-5:00pm in LYN120B</p>
+        </li>
+        <li>
+          <title>Book</title>
+          <p><em>Introduction to AI Robotics</em>, 2nd ed, Robin Murphy</p>
+        </li>
+        <li>
+          <title>Websites</title>
+          <p><url href="https://hanover.instructure.com/courses/2004">Canvas</url>, <url href="">TODO notes</url></p>
+        </li>
+      </dl>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Course description</title>
+  <blockquote>
+    <p><term>CS 233 Introduction to Robotics</term> - Introduction to robotics and topics in artificial intelligence relevant to robotics through a combination of lectures and labs. Lectures introduce concepts, such as paradigms for organizing intelligence in robots and different sensing techniques. In labs, students learn an open-source robotics platform, such as Arduino, with the goal of building a working reactive robot by the end of the course. Offered alternate years. Prerequisite: 223. Fee Charged.</p>
+  </blockquote>
+  <p>
+    This course is an introduction to robotics and topics in artificial intelligence relevant to robotics through a combination of lectures and labs. Each class day will consist of lectures introducing theoretical concepts such as paradigms for organizing intelligence in robots and different sensing techniques, and labs where you will learn how to program on the micro:bit platform and build a working reactive robot that can detect obstacles and navigate a course.
+  </p>
+  <p>By the end of the course you will be able to:
+  <ul>
+    <li>describe the different software and hardware components that comprise a robot.</li>
+    <li>describe different architectures and paradigms used in robotic software.</li>
+    <li>describe different mechanisms for representing the robot's knowledge about the world.</li>
+    <li>use different sensing and action mechanisms to enable the robot to operate around the world.</li>
+    <li>program a robot that interacts with its environment to achieve its navigation goals.</li>
+  </ul>
+</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Components</title>
+    <p>Your class work will revolve around 4 main items:</p>
+    <p>
+      <term>Reflections</term>
+          Each evening you will have to submit a brief recording (2 minutes or less) on the material of the day and the reading for next day. In this recording you must mention 3 key things you learned and 2 questions you have. The recordings are due at 10pm.
+
+    </p>
+    <p><term>Exams</term> The theoretical part of the course will be evaluated by in-class exams.
+      <ul>
+        <li><p>3 exams, 4 questions each</p></li>
+        <li>
+          <p>Each question is scored as:
+            <ul>
+              <li><term>2</term> a solid and sufficiently complete answer to the question</li>
+              <li><term>1</term> the essence is correct but there are parts missing or incorrect</li>
+              <li><term>0</term> the answer is not satisfactory</li>
+            </ul>
+          </p>
+        </li>
+        <li><p>No partial credit beyond the above breakdown.</p></li>
+        <li><p>Total of 24 points in the 3 exams together.</p></li>
+      </ul>
+    </p>
+    <p><term>Labs</term> Most days will involve a lab assignment.
+     <ul>
+      <li>
+        <p>Each lab will have a number of <em>objectives</em>, typically in the form of your robot demonstrating a certain behavior. </p>
+      </li>
+      <li><p>You get credit for an objective by showing me your robot achieving that objective.</p></li>
+      <li><p>The total number of completed objectives across all labs determines your lab grade.</p></li>
+     </ul>
+    </p>
+    <p><term>Project</term> For the end of the term you will work on a project involving your robot and certain navigation tasks. You will be evaluated on how effectively your robot can achieve these tasks.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Grading</title>
+    <p>Your grade depends on your performance in the areas above, using the following table as a general guide. In general you can achieve a certain grade by meeting all the objectives on that row of the table.
+      <table>
+        <title>Grade thresholds</title>
+        <tabular halign="center" row-headers="yes">
+          <col halign="left" />
+          <col/>
+          <col/>
+          <col/>
+          <col/>
+          <row header="yes">
+            <cell></cell>
+            <cell>Reflections</cell>
+            <cell>Labs</cell>
+            <cell>Exams</cell>
+            <cell>Project</cell>
+          </row>
+          <row>
+            <cell>A</cell>
+            <cell>90%</cell>
+            <cell>95%</cell>
+            <cell>20</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>A-</cell>
+            <cell>90%</cell>
+            <cell>90%</cell>
+            <cell>18</cell>
+            <cell>4</cell>
+          </row>
+          <row>
+            <cell>B+</cell>
+            <cell>80%</cell>
+            <cell>85%</cell>
+            <cell>16</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>B</cell>
+            <cell>80%</cell>
+            <cell>80%</cell>
+            <cell>14</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>B-</cell>
+            <cell>80%</cell>
+            <cell>80%</cell>
+            <cell>12</cell>
+            <cell>3</cell>
+          </row>
+          <row>
+            <cell>C+</cell>
+            <cell>70%</cell>
+            <cell>75%</cell>
+            <cell>10</cell>
+            <cell>2</cell>
+          </row>
+          <row>
+            <cell>C</cell>
+            <cell>70%</cell>
+            <cell>70%</cell>
+            <cell>8</cell>
+            <cell>2</cell>
+          </row>
+          <row>
+            <cell>C-</cell>
+            <cell>70%</cell>
+            <cell>70%</cell>
+            <cell>6</cell>
+            <cell>2</cell>
+          </row>
+          <row>
+            <cell>D+</cell>
+            <cell>60%</cell>
+            <cell>65%</cell>
+            <cell>4</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>D</cell>
+            <cell>60%</cell>
+            <cell>60%</cell>
+            <cell>2</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>F</cell>
+            <cell>0%</cell>
+            <cell>0%</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+        </tabular>
+      </table>
+    </p>
+  </paragraphs>
+</section>

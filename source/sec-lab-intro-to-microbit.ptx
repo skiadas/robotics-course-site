@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-lab-intro-to-microbit" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab: Introduction to microbit</title>
+  <introduction>
+    <p> In this we will get our first test of programming the microbit controllers.</p>
+  </introduction>
+  <subsection xml:id="subsec-lab-intro-basic-program">
+    <title>Basic programs in micro:bit</title>
+    <p>
+      <ul>
+        <li>Follow the <url href="https://learn.parallax.com/courses/get-started-with-microbit-and-python/">"Get started"</url> tutorial. It will teach you how to start a new program file, and how to upload the file to the micro:bit to run it. You will also learn your first three commands: <c>display.show</c>, <c>sleep</c> and <c>display.scroll</c>.</li>
+        <li>Follow the <url href="https://learn.parallax.com/courses/writing-microbit-programs/">Writing micro:bit programs</url> tutorial. This teaches you a number of more advanced techniques such as using the two buttons on the micro:bit, but is also a refresher of basic Python stuff.</li>
+      </ul>
+    </p>
+    <exercise label="ex-images-animal">
+      <statement>
+        <p>
+          Consult the <url href="https://microbit-micropython.readthedocs.io/en/stable/tutorials/images.html">API</url> for the various built-in images, and make your bot display one of some animal of your choice.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise label="ex-images-custom-image">
+      <statement>
+        <p>
+          Read in the API about how to specify a custom image, then make an image of your choice. I suggest some version of the HC Panther.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise label="ex-images-lists">
+      <statement>
+        <p>
+          The <c>Image</c> object also provides a list of images, for example the list of all arrows or the list of all "clocks". Call the <c>display.show</c> function by providing it a list like that and see it loop through all the different symbols. Look through the API above to find how you can control the delay between images, to make them take a second between each image.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise label="ex-images-animation">
+      <statement>
+        <p>
+          Use this approach of a list of images to create the animation of a person that enters from the right of the screen and leaves on the right. You can do this manually if you like, or you may use an LLM/AI to help you create this. An approach to doing that could be: Ask it to generate an animation of 5x5 grid frames each being either "filled" or "empty"; then ask it to transform these frames by replacing the empty spots with 0 and the filled spots with 1, and concatenating all the lines of each frame separated by a colon, then putting each frame in a string. Finally ask it to wrap each string in a call to <c>Image</c>. Then store this list in a variable and use it with <c>display.show</c>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise label="ex-countdown-scroll">
+      <statement>
+        <p>
+          Use the <c>display.scroll</c> command together with a Python <c>for</c> loop to create a small program that will go through all the numbers from 10 down to 1 and for each number scroll it through the screen then wait for half a second before the next number. But make sure the scroll of each number happens faster than normal (look for the documentation for <c>scroll</c> to learn how to control this), then afterwards it shows some big explosion or star like image, for a second, before starting again.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise label="ex-countdown-scroll-from-input">
+      <statement>
+        <p>
+          Use the serial monitor you learned about in the lab in order to modify the above command so that instead of starting at 10 it asks the user to input the number.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise label="ex-buttons-counter">
+      <statement>
+        <p>
+          Instead of the serial monitor, use the button presses as follows:
+        <ul>
+          <li>You keep track of a counter <c>n</c> that starts at 0. Normally your program displays this counter.</li>
+          <li>If the button B is pressed, the counter increases by 1.</li>
+          <li>If the button A is pressed, then the countdown program runs from that counter down to 0 just as in the earlier parts.</li>
+        </ul>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="subsec-accelerometer-dice-rolling">
+    <title>Using the accelerometer to emulate dice-rolling</title>
+    <p>
+      For this part we'll learn a bit about the micro:bit's accelerometer capabilities. The accelerometer is in general the circuit that detects movement.
+      <ul>
+        <li>
+          Follow the "dice" <url href="https://microbit.org/projects/make-it-code-it/dice/?editor=python">Dice</url> tutorial for a very basic mechanism for generating random dice.
+        </li>
+        <li>
+          Follow the <url href="https://microbit.org/projects/make-it-code-it/graphical-dice/?editor=python">Graphical Dice</url> tutorial for a very a variation that shows the dice by image instead of number.
+        </li>
+      </ul>
+    </p>
+    <exercise label="ex-dice-rolling-list">
+      <statement>
+        <p>Modify the graphical-dice example so that the various die images are stored in a Python list and an entry is selected directly based on the random number. In your final version there should no longer be any <c>if</c> and <c>elif</c> constructs.</p>
+      </statement>
+    </exercise>
+    <exercise label="ex-dice-rolling-random">
+      <statement>
+        <p>Building on the previous example, modify the graphical dice example further as follows: When the shake is detected, the code generates a list of 10 random die rolls. Then it proceeds to show each of the rolls in quick succession (about 4 within a second) before settling on the final number. The idea is to simulate a bit the behavior of rolling the die and how things change until it settles.</p>
+      </statement>
+    </exercise>
+    <exercise label="ex-dice-rolling-longer-program">
+      <statement>
+        <p>This is a bigger program bringing things together. Here is the behavior you need to produce:
+          <ul>
+            <li>When "idle" the robot shows a "beating heart", with the heartbeat animation alternating between a smaller heart and a larger heart.</li>
+            <li>If shaken the bot enters an "active" state where it starts producing and showing random die numbers, graphically.</li>
+            <li>If while in the active state the B button is pressed then the bot settles on one random number and only shows that. You could say it has entered a "stable" state.</li>
+            <li>If at any point the A button is pressed then the bot reverts to the idle state.</li>
+            <li>If the B button is pressed during the idle state then the last rolled number is shown for 1 second before the heartbeat resumes.</li>
+          </ul>
+          You will want to use a global "state" variable to represent the three different states that the bot may be in. Use 1, 2 and 3 to represent the three different states, but give them all-caps names that reflect what they represent, for example <c>ST_IDLE = 1</c>.
+        </p>
+        <p>Bonus: Look into the <c>audio</c> or <c>music</c> modules and add a suitable sound to indicate the end of the roll.</p>
+      </statement>
+    </exercise>
+    <p>To complete this lab, show your instructor this final program in action.</p>
+  </subsection>
+</section>

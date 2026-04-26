@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-introduction-generals" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Introduction</title>
+
+  <introduction>
+    <p> This section contains the main general resources for the course. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-syllabus.ptx" />
+  <xi:include href="sec-intro-bot-tutorials.ptx" />
+
+</chapter>

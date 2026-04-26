@@ -1,0 +1,7 @@
+logs/**/*
+output/**/*
+.cache/**/*
+.error_schema.log
+/generated-assets/*
+/.vscode/*
+

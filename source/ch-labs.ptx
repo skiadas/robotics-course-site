@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-labs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Labs</title>
+
+  <introduction>
+    <p>This chapter contains pertinent info for each lab we will work on. </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-lab-intro-to-microbit.ptx" />
+  <xi:include href="sec-lab-cyberbot-assembly.ptx" />
+
+</chapter>
