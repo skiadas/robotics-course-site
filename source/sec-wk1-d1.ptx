@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-wk1-d1" number="no" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Week 1 day 1</title>
+  <introduction>
+    <p>Today we focus on trying to understand what a robot is, and being introduced to the micro:bit.</p>
+  </introduction>
+  <paragraphs>
+    <title>Lab</title>
+    <p>Look at <xref ref="sec-lab-intro-to-microbit"/></p>
+  </paragraphs>
+  <paragraphs>
+    <title>Notes</title>
+    <p>Here are the <url href="https://hackmd.io/@skiadas/HksGOv2Hq">slides</url>.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Reading</title>
+    <p>Here is the <url href="https://hackmd.io/@skiadas/Hyp-aqhSc">reading assignment</url>. In your submission reflect on that assignment as well as anything from class.</p>
+  </paragraphs>
+</section>

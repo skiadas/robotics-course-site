@@ -13,6 +13,7 @@
 
     <!-- Include chapters -->
     <xi:include href="./ch-introduction-generals.ptx" />
+    <xi:include href="./ch-week-1.ptx" />
     <xi:include href="./ch-labs.ptx" />
 
 
