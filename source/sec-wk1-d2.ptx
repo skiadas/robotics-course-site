@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-wk1-d2" number="no" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Week 1 day 2</title>
+  <introduction>
+    <p>Today we will spend mostly building our mobile robot.</p>
+  </introduction>
+  <paragraphs>
+    <title>Lab</title>
+    <p>Look at <xref ref="sec-lab-cyberbot-assembly"/></p>
+  </paragraphs>
+  <paragraphs>
+    <title>Notes</title>
+    <p>
+      <ul>
+        <li>How does the robot learn where they are?</li>
+        <li>How simple can a robot be and still be a robot?</li>
+        <li>Difference between engineering and AI approaches to building robots?</li>
+        <li>When is it better to use a robot as a tool instead of as an agent?</li>
+      </ul>
+    </p>
+    <p>Control theory:
+      <ul>
+        <li>How do we control movement to smooth out the starts and ends, not overshoot the mark etc?</li>
+        <li>Open-loop vs closed-loop control.</li>
+      </ul>
+    </p>
+    <p>Mars rover challenges: Time it takes to communicate</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Reading</title>
+    <p>Here is the <url href="https://hackmd.io/@skiadas/SyV00nMIc">reading assignment</url>. In your submission reflect on that assignment as well as anything from class.</p>
+  </paragraphs>
+</section>

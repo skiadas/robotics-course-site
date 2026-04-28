@@ -37,12 +37,13 @@
           <ul>
             <li>Measure the radius of the wheel, in inches.</li>
             <li>Multiply the radius by 6.28 (<m>2\pi</m>) to compute the perimeter. In theory when the wheels have done a full rotation the bot will have moved for a distance equal to this perimeter. It's not perfect due to ground friction but it's a good starting point.</li>
-            <li>Multiply the perimeter by the RPM value from your spreadsheet, for that signal strength, to estimate how much distance the both should travel in a minute, measured in inches.</li>
+            <li>Multiply the perimeter by the RPM value from your spreadsheet, for that signal strength, to estimate how much distance the bot should travel in a minute, measured in inches.</li>
             <li>Convert this to feet per minute.</li>
             <li>Now compare this with an actual run: Have your bot move forward for 1 minute at a given signal and from a given start point, then mark the start location and end location and measure their distance. If 1 minute is too long, use a fraction (e.g. 15 seconds) then multiply with the appropriate factor (e.g. 4). Compare your answer to the speed you estimated earlier.</li>
           </ul>
         </p>
       </statement>
     </exercise>
+    <p>To submit: Show me your spreadsheet and your work on this last practice run.</p>
   </subsection>
 </section>

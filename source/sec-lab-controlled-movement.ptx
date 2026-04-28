@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-lab-controlled-movement" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab: Controlled movement</title>
+  <introduction>
+    <p>In this lab we'll learn how to control the bot movement in a finer way, by for example not accelerating too fast.</p>
+  </introduction>
+  <subsection xml:id="subsec-rescaling-constraining-values">
+    <title>Rescaling and Constraining values</title>
+    <p>Before moving further we need to set up some groundwork. One of our first goals would be to look at the accelerometer values then convert those into something that can be seen on the screen.</p>
+    <p>The first thing to do is set up so something happens automatically at fixed intervals. Start by searching in the API for <c>run_every</c> and find its documentation, and in particular look at its use as a <term>decorator</term> (with the at-sign <c>@</c>.</p>
+    <p>Next, look at the accelerometer API and find how to get the accelerometer value for different directions. Make sure you identify which one of those directions will give you information about the bot moving forward or backward (you may need to use "More" to expand the explanations).</p>
+    <exercise label="ex-accelerometer-report">
+      <statement>
+        <p>The goal here is to make a program that prints the accelerometer value on a fixed interval, using the two pieces above. So first of all make sure you have a <c>while True</c> loop that simply does a <c>sleep</c>. This will make sure your bot is actively working by itself.</p>
+        <p>Then write a separate function decorated by <c>run_every</c> as in the examples you found above, to execute every 10 milliseconds. Then in that function use <c>print</c> to print the accelerometer value in the direction of movement. The value should be small negative numbers normally, but it can jump to the 400 range if you move the bot forward quickly.</p>
+      </statement>
+    </exercise>
+    <p>Now that we have the accelerometer value recorded well, we need to work with it. The idea is this: We would like to connect the accelerometer to the brightness of the LED lights. But here is the problem: The accelerometer values are in a range of possibly hundreds or thousands, while the LED lights only accept an integer from 0 to 9. So our goal: Appropriately rescale a value from one range to the other. The general math we want to do with rescaling can be expressed as follows:
+      <ul>
+        <li>We have </li>
+      </ul>
+    </p>
+  </subsection>
+</section>
