@@ -8,7 +8,7 @@
   <subsection xml:id="subsec-rescaling-constraining-values">
     <title>Rescaling and Constraining values</title>
     <p>Before moving further we need to set up some groundwork. One of our first goals would be to look at the accelerometer values then convert those into something that can be seen on the screen.</p>
-    <p>The first thing to do is set up so something happens automatically at fixed intervals. Start by searching in the API for <c>run_every</c> and find its documentation, and in particular look at its use as a <term>decorator</term> (with the at-sign <c>@</c>.</p>
+    <p>The first thing to do is set up so something happens automatically at fixed intervals. Start by searching in the API for <c>run_every</c> and find its documentation, and in particular look at its use as a <term>decorator</term> (with the at-sign <c>@</c>).</p>
     <p>Next, look at the accelerometer API and find how to get the accelerometer value for different directions. Make sure you identify which one of those directions will give you information about the bot moving forward or backward (you may need to use "More" to expand the explanations).</p>
     <exercise label="ex-accelerometer-report">
       <statement>
