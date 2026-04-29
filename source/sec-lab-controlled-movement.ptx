@@ -18,9 +18,9 @@
     </exercise>
     <p>Now that we have the accelerometer value recorded well, we need to work with it. The idea is this: We would like to connect the accelerometer to the brightness of the LED lights. But here is the problem: The accelerometer values are in a range of possibly hundreds or thousands, while the LED lights only accept an integer from 0 to 9. So our goal: Appropriately rescale a value from one range to the other. The general math we want to do with rescaling can be expressed as follows:
       <ul>
-        <li>We have a value <m>x</m>. It comes from a range <m>[x_{min}, x_max]</m>.</li>
+        <li>We have a value <m>x</m>. It comes from a range <m>[x_{min}, x_{max}]</m>.</li>
         <li>We want to convert it to a target value <m>y</m> in a range <m>[y_{min}, y_{max}]</m>.</li>
-        <li>We want a "linear progress": If <m>x</m> is 20% of the way from <m>x_{min}</m> to <m>x_{max}</m> then we want <m>y</m> to be 20% of the way from <m>y_min</m> to <m>y_max</m>.</li>
+        <li>We want a "linear progress": If <m>x</m> is 20% of the way from <m>x_{min}</m> to <m>x_{max}</m> then we want <m>y</m> to be 20% of the way from <m>y_{min}</m> to <m>y_{max}</m>.</li>
         <li>Mathematically this mean we need the following ratios to be equal: <md>
           \frac{x-x_{min}}{x_{max} - x_{min}} = \frac{y-y_{min}}{y_{max} - y_{min}}
         </md>
