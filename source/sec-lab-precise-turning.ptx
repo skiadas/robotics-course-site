@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-lab-precise-turning" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab: Precise Turning</title>
+  <introduction>
+    <p>In this lab we'll learn how to rotate the robot for a prescribed angle, for example in order to make a right angle turn.</p>
+  </introduction>
+  <subsection xml:id="subsec-basic-rotation">
+    <title>Basic Rotation</title>
+    <p>You already know the basic parts of carrying out a rotation probably: Turn the two wheels both clockwise for a left turn or both counter-clockwise for a right turn.</p>
+    <exercise label="ex-rotation-with-rampup">
+      <statement>
+        <p>Implement a basic rotation for a specified amount of time but including a ramp-up and ramp-down period. I.e. given an amount of milliseconds, the bot should ramp up to its maximum turn speed, then keep turning at max speed for that number of milliseconds, then ramp-down to stop.</p>
+        <p>Using a bit of trial and error, try to make the bot do a full 360 turn this way, by choosing the correct number of milliseconds.</p>
+      </statement>
+    </exercise>
+    <p>This is the first objective for this lab.</p>
+  </subsection>
+  <subsection xml:id="subsec-precise-rotations">
+    <title>Precise Rotations</title>
+    <p>In order to do more precise rotations we will need to do a work similar to what we did for moving straight:
+      <ul>
+        <li>Have the bot rotate for given amounts of time, say from 0 and increasing by 100 milliseconds</li>
+        <li>Measure the corresponding angles</li>
+        <li>Now for a given target angle find the two closest values and use <c>scale</c> to find the correct number of milliseconds</li>
+      </ul>
+    </p>
+    <p>
+      This will work great, except for one key problem: How do we precisely measure angles? Eyeballing it will not cut it here. And measuring angles is more complicated than measuring on a straight line. So we will use a bit of math to help us, with something called the <term>law of cosines</term>: If we have a triangle with sides <m>a</m>, <m>b</m> and <m>c</m>, and the angle opposite side <m>c</m> is <m>C</m> then we have the equation:
+      <md>c^2 = a^2 + b^2 - 2ab\cos(C)</md>
+      And we can solve this equation for <m>C</m>:
+      <md>
+        \cos(C) = \frac{c^2 - a^2 - b^2}{2ab}
+      </md>
+      The idea is to use this to measure the angles, as follows:
+      <ul>
+        <li>Place your bot at an initial location and direction.</li>
+        <li>Have it move straight for a fixed distance, say 10 inches. We already know how to do that from last time. This is basically the value of <m>a</m> in the math above.</li>
+        <li>Have it turn for the specific amount of time. Essentially forming the angle C.</li>
+        <li>Then have it move for another specific distance <m>b</m>, say also 10 inches to make the math easier.</li>
+        <li>Now compute the distance <m>c</m> from the bot's original location to its current location.</li>
+        <li>Use the formula above to compute <m>\cos(C)</m>.</li>
+        <li>Use the "inverse cosine" function, usually denoted by <c>acos</c> in most systems, to get the corresponding angle value.</li>
+        <li>The angle value is in "radians". To turn it to degrees you need to divide by 6.28 (i.e. <m>2\pi</m>) then multiply by 360. Or you can use <c>scale</c> with the ranges <m>(0, 2\pi)</m> to <m>(0, 360)</m>.</li>
+      </ul>
+    </p>
+    <exercise label="ex-precise-rotation-measurements">
+      <statement>
+        <p>Carry out the above work for time intervals increasing by 100 milliseconds each time, until you have reached a full circle (you probably have an estimate of how long that takes already). You may use 200 millisecond increments instead if you would have had way too many measurements to do (plan for more than 10 and less than 20 measurements).</p>
+        <p>Record your work in a spreadsheet, with columns for the amount of time run, the length of <m>c</m>, the corresponding computation of <m>\cos(C)</m>, and the value for C. You will need to use formulas to make that happen, to have the spreadsheet compute things for you. Let me know if you need assistance with that.</p>
+      </statement>
+    </exercise>
+    <p>This spreadsheet is the second objective for this lab.</p>
+    <exercise label="ex-precise-rotation-practice">
+      <statement>
+        <p>Using lists of values from this table together with the <c>scale</c> function build a <c>rotate</c> function that is given an angle in degrees and it is supposed to rotate the robot exactly to this angle.</p>
+        <p>Then use this function to have the robot move in a perfect square of side 1 foot. The robot should end where it started.</p>
+        <p>Also have your robot move in a perfect equilateral triangle of side 1 foot.</p>
+      </statement>
+    </exercise>
+    <p>Carrying out this last practice is the third and last objective for this lab.</p>
+  </subsection>
+</section>
