@@ -10,5 +10,6 @@
   <!-- include sections -->
   <xi:include href="sec-lab-intro-to-microbit.ptx" />
   <xi:include href="sec-lab-cyberbot-assembly.ptx" />
+  <xi:include href="sec-lab-controlled-movement.ptx" />
 
 </chapter>

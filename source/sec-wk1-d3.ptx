@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-wk1-d3" number="no" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Week 1 day 3</title>
+  <introduction>
+    <p>Today we will discuss automation vs autonomy for robots, and will work on controlling our robot movements more.</p>
+  </introduction>
+  <paragraphs>
+    <title>Lab</title>
+    <p>Look at <xref ref="sec-lab-controlled-movement"/></p>
+  </paragraphs>
+  <paragraphs>
+    <title>Notes</title>
+    <p>Link to the notes on <url href="https://hackmd.io/@skiadas/ryPAVlfLc">automation vs autonomy</url>.</p>
+    <p>
+      Questions:
+      <ul>
+        <li>Would non-deterministic robots be safe in critical environments?</li>
+        <li>Confused about open world vs closed world</li>
+        <li>What other sensors will we have available?</li>
+        <li>How much autonomy is actually helpful (before we lose trust)?</li>
+        <li>How is it possible to evaluate mistakes in an autonomous system?</li>
+      </ul>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Reading</title>
+    <p>Here is the <url href="https://hackmd.io/@skiadas/r1d7ciU8q">reading assignment</url>, on software architectures. In your submission reflect on that assignment as well as anything from class.</p>
+  </paragraphs>
+</section>

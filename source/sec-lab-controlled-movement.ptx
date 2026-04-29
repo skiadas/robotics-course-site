@@ -13,13 +13,82 @@
     <exercise label="ex-accelerometer-report">
       <statement>
         <p>The goal here is to make a program that prints the accelerometer value on a fixed interval, using the two pieces above. So first of all make sure you have a <c>while True</c> loop that simply does a <c>sleep</c>. This will make sure your bot is actively working by itself.</p>
-        <p>Then write a separate function decorated by <c>run_every</c> as in the examples you found above, to execute every 10 milliseconds. Then in that function use <c>print</c> to print the accelerometer value in the direction of movement. The value should be small negative numbers normally, but it can jump to the 400 range if you move the bot forward quickly.</p>
+        <p>Then write a separate function decorated by <c>run_every</c> as in the examples you found above, to execute every 10 milliseconds. Then in that function use <c>print</c> to print the accelerometer value in the direction of movement. The value should be small negative numbers normally, but it can jump to the 400 range if you move the bot forward quickly. Use the <c>abs</c> value to always look at the absolute value.</p>
       </statement>
     </exercise>
     <p>Now that we have the accelerometer value recorded well, we need to work with it. The idea is this: We would like to connect the accelerometer to the brightness of the LED lights. But here is the problem: The accelerometer values are in a range of possibly hundreds or thousands, while the LED lights only accept an integer from 0 to 9. So our goal: Appropriately rescale a value from one range to the other. The general math we want to do with rescaling can be expressed as follows:
       <ul>
-        <li>We have </li>
+        <li>We have a value <m>x</m>. It comes from a range <m>[x_{min}, x_max]</m>.</li>
+        <li>We want to convert it to a target value <m>y</m> in a range <m>[y_{min}, y_{max}]</m>.</li>
+        <li>We want a "linear progress": If <m>x</m> is 20% of the way from <m>x_{min}</m> to <m>x_{max}</m> then we want <m>y</m> to be 20% of the way from <m>y_min</m> to <m>y_max</m>.</li>
+        <li>Mathematically this mean we need the following ratios to be equal: <md>
+          \frac{x-x_{min}}{x_{max} - x_{min}} = \frac{y-y_{min}}{y_{max} - y_{min}}
+        </md>
+        </li>
+        <li>Solve this equation for <m>y</m>: <md>
+          y = y_{min} + \frac{x-x_{min}}{x_{max} - x_{min}}(y_{max} - y_{min})
+        </md></li>
       </ul>
+      This seems perhaps a tad complicated, but there is a built-in function that does this for us, called <c>scale</c>. You would use it like this: <c>y = scale(x, from_=(xmin, xmax), to=(ymin, ymax))</c>
     </p>
+    <exercise label="ex-rescaling">
+      <statement>
+        <p>Add to the reporting of the accelerometer value: In addition to the value itself, print its scaled value, where we want to map the <c>(0,400)</c> range on the accelerometer to the <c>(0,9)</c> range (so that a value of 400 becomes 9, basically.</p>
+        <p>Notice two things: What happens to values bigger than 400? And also, do the results produce only integers or also floating point numbers?</p>
+      </statement>
+    </exercise>
+    <p>The next piece of the puzzle is how to handle out-of-range situations. For example an acceleration value of 400 will be too high for us and we'd want that to correspond to 9, but then a bigger value would be invalid. What we want to do is <term>constrain</term> the resulting value: If it is less than 0 we want it to become 0 and if it is more than 9 we want it to become 9. To that end you will create a function that does this.</p>
+    <exercise label="ex-constrain">
+      <statement>
+        <p>Write a function called <c>constrain(x, range)</c> that takes as input a value and a target range as a tuple <c>(xmin, xmax)</c>. (You can read out a tuple's values with something like <c>(xmin, xmax) = range</c>. The function should then return <c>x</c> as long as it is between the min and max, but otherwise it should return that closest point. So if <c>x</c> is less than <c>xmin</c> then the return value would be <c>xmin</c> and similarly if <c>x</c> is more than <c>xmax</c>.</p>
+        <p>Use the function in your accelerometer printout to make sure that the resulting scaled value is always in the range from 0 to 9.</p>
+      </statement>
+    </exercise>
+    <p>Equipped with this functionality, now we can make the lights turn on when we accelerate too much.</p>
+    <exercise label="ex-acceleration-lights-on">
+      <statement>
+        <p>In addition to the printing of the values, your acceleration reporting function should also set the display as follows: Compute the scaled and constrained number as before, then start with the heart image, divide by 9 and multiply by the constrained number. You should now observe that when you move your bot too fast the heart lights up and otherwise it's pretty dark.</p>
+        <p>How does this work: The images have values 0 through 9 and in the heart case that 9 corresponds to the bright parts. Dividing by 9 turns all those 9s into 1s. Then multiplying by the given number scales them back up. For example at half acceleration you'll get 5s and the heart should be half-visible.</p>
+      </statement>
+    </exercise>
+    <p>This last practice is the first objective of the lab.</p>
+  </subsection>
+  <subsection xml:id="subsec-ramp-up-and-ramp-down">
+    <title>Ramp-up and Ramp-down</title>
+    <p>Now that we have this measure and visualization of the acceleration, let's work on ramp-up and ramp-down. The idea is simple: You want to reach a certain target speed but "gently". Say the target speed is 160. You can reach it "gently" by increasing the speed by 20, then waiting 100 milliseconds before increasing it another 20, and so on until you reach 160. We get to control two things here: How much to increase each time (20), and for how long to run at that level (100).</p>
+    <exercise label="ex-ramp-up-and-down">
+      <statement>
+        <p>Your goal for this exercise is to adjust those numbers so that you achieve the following:
+          <ul>
+            <li>never exceed an acceleration of 400</li>
+            <li>minimize how long it takes to ramp up and down in total time</li>
+            <li>minimize how much distance is traveled</li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <p>Store the ramp-up and ramp-down parts as separate functions you can call on, as we'll be using them. Record somewhere how much distance they take together.</p>
+    <p>Our next goal now is to be able to program how much the bot moves. We want to essentially write function <c>forward(inches)</c> that takes as input a number of inches, then moves forward for exactly that many inches, factoring in the ramp-up and ramp-down. The first part of that is collecting some data.</p>
+    <exercise label="ex-distance-for-time">
+      <statement>
+        <p>Create an array of times in milliseconds that we would run the bot at full speed for, starting at 0 and increasing by 500 up to 3 seconds.</p>
+        <p>For each time have the bot ramp up, then move at top speed for that amount of time, then ramp down, and compute the total distance traveled.</p>
+        <p>Draw a line plot of those distances against the corresponding times. This should hopefully appear to be pretty close to a straight line.</p>
+      </statement>
+    </exercise>
+    <p>Now we move on to creating the <c>forward</c> function:</p>
+    <exercise label="ex-forward-function">
+      <statement>
+        <p>Create a function <c>forward(inches)</c> that is being given a value in inches, and it moves the bot forward for exactly that distance. It should operate as follows:
+        <ul>
+          <li>First of all if the value is less than your minimum distance (the one with just ramp-up and ramp-down from earlier) then don't do anything. Otherwise find in your table the two points in-between which the desired inches distance is. For example maybe you are trying to go for 30 inches and in your table you found that in 2000 milliseconds we get to 27 inches and in 2500 milliseconds we get to 32 inches. So that is the range, since 30 is between 27 and 32.</li>
+          <li>Then use <c>scale</c> to find the corresponding amount of milliseconds, by scaling the inches value from the 27-32 range to the 2000-2500 range (or whatever the values are in your case). This tells you the number of milliseconds you should move at your top speed.</li>
+          <li>Extract all this above logic into a separate function. Then use that function to do ramp-up then move at top speed for that amount then ramp-down.</li>
+        </ul>
+        Your function should be able to provide pretty accurate distances. And also your bot should be moving in a straight line.
+        </p>
+      </statement>
+    </exercise>
+    <p>This exercise is the second and final objective for this lab.</p>
   </subsection>
 </section>
