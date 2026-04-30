@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-lab-tactile-navigation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab: Tactile Navigation</title>
+  <introduction>
+    <p>In this lab we'll learn how add touch sensors to our bot and use those to avoid colliding into obstacles. But first we'll learn about adding a sound module and other circuits to our robot</p>
+  </introduction>
+  <subsection xml:id="subsec-adding-sound">
+    <title>Adding sound</title>
+    <p>
+      Go through the <url href="https://learn.parallax.com/courses/sound-for-the-cyberbot/">Sound for the cyber:bot</url> tutorial, that shows you how to add a small speaker and how to use it.
+    </p>
+    <p>This <url href="external/alma-mater.pdf">sheet</url> contains our Alma Mater music. Your goal will be to get our speaker to produce at least the basic melody. We'll explain some of the basics below.</p>
+    <p>First we need to code the frequencies for various notes. As you may know, each note has a corresponding frequency. But it also happens that the same note can be played at a higher "octave", and for each octave increase we have to double the frequency. For example what is often referred to as the "middle C", which we will denote by <c>C4</c>, will be at the frequency of 261.63Hz. The next higher version of C, called <c>C5</c>, would be at <m>2\times 261.63 = 523.26</m>Hz, and the next one, <c>C6</c>, would be 1046.52Hz.</p>
+    <p>This range from one C to the next is divided into 12 parts called <em>semitones</em>. To compute each semitone in order we have to multiply the previous one with "two to the power of <m>\frac{1}{12}</m>"", which is equal to 1.059463. After twelve of those multiplications happen, it would be as if we multiplied by 2 (note that <m>1.059463^{12} = 2</m>).</p>
+    <p>We now mark those 12 semitones with symbols. In a piano keyboard these correspond exactly to the 12 keys (white and black). We already used C for the first one, the next one is a black key that we can call "C-sharp" or "D-flat". In code we will denote those as <c>C4s</c> and <c>D4b</c> respectively. Then we continue in this manner. Here is a <url href="external/notes.py">notes.py</url> file that does all this math, include it into your project, and add a <c>from notes import *</c> line somewhere near the top. You should also take a moment to open this file in your favorite text/code editor and view its contents.</p>
+    <p>We need to set up two useful constants for our work. One is the tempo we want measured in <c>BPM</c> (beats per minute). Set this to equal 100 for now, but know that you can adjust it to speed-up or slow-down the rhythm of the piece.</p>
+    <p>Then we need to compute the <c>BEATMS</c>, how many milliseconds a "beat" should last. This is computed directly from the BPM: It should equal 60 times 1000 divided by BPM. As we play the piece, we'll need to use this variable to compute the duration for each note.</p>
+    <p>Now to look at the sheet music and match it to "note and frequency". First off you want to only focus on the lines above the words. Each circle denotes a note, and you'll see they come in pairs, we want to focus on the top note from each pair. So the very first note is basically just below the bottom of the 5 lines. This would correspond to D4, and we go up from there: The bottom line exactly is E4, the space between the bottom two lines is F4, the second line is G4 and so on. Note that there is a specific key signature here that tells us that we should use "E-flat" and "B-flat", so whenever you would run into those you want to use the -b variants, so it would actually be <c>E4b</c>. Note also that after G4 we have A4, not A5. Then after A4 we have B4, then we switch to C5. so this should help you match a note frequency to each of the notes in the sheet.</p>
+    <p>The next step is to figure out durations. A black circle with a line next to it is "1 beat", which would play for duration <c>BEATMS</c> for us. If it has a little tail at the top it should be half that, and if it has a little dot next to it (like the first note does) it is one and a half times that. Every segment (marked by the vertical lines) should add up to 4. A hollowed out circle as you see at the end of the first line counts for 4 by itself, while a hollow circle with a line up from it (like you see in "live our" in the third block) is 2 beats.</p>
+    <exercise label="ex-sound-alma-mater">
+      <statement>
+        <p>Set up your speaker to play the Alma Mater, the first two lines in the sheet at least. But do so as follows: You should have an array where each entry is a pair of a note and a number of beats, for example the very first one would be <c>(D4, 1.5)</c>. Then in a for loop you extract these pairs and use the <c>tone</c> function to play the corresponding note for the corresponding duration (remember to multiple the number like 1.5 with the <c>BEATMS</c> factor).</p>
+      </statement>
+      <p>This playing is the first objective of this lab.</p>
+    </exercise>
+  </subsection>
+  <subsection xml:id="subsec-circuits-generals">
+    <title>General circuit knowledge</title>
+    <p>
+      Go through the <url href="https://learn.parallax.com/courses/circuits-on-the-cyberbot/">Circuits on the cyber:bot</url> lab
+    </p>
+    <exercise label="ex-lights-plus-alma-mater">
+      <statement>
+        <p>Add one light for each note that is part of the alma mater. Then modify the music-playing script from the previous section so that it also lights up the corresponding light for the duration of the the note playing (so we should see the various lights turn on and off as the song plays).</p>
+      </statement>
+    </exercise>
+    <p>This is the second objective of this lab.</p>
+  </subsection>
+  <subsection xml:id="subsec-touch-sensors">
+    <title>Touch sensors</title>
+    <p>
+      Go through the <url href="https://learn.parallax.com/courses/touch-navigation-for-the-cyberbot/">Touch navigation</url> lab.
+    </p>
+    <exercise label="ex-tactile-stop-after-minute">
+      <statement>
+        <p>In addition to the escaping-corners behavior, your bot should also make an end sound and stop moving after one minute of time has passed. You can use the <c>time</c> module and its <c>ticks_ms</c> and <c>ticks_diff</c> functions.</p>
+      </statement>
+    </exercise>
+  </subsection>
+</section>

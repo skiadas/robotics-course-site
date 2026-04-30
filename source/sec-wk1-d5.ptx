@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-wk1-d5" number="no" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Week 1 day 5</title>
+  <introduction>
+    <p>Today we will discuss software architectures, and work on our first sensor interaction using whiskers.</p>
+  </introduction>
+  <paragraphs>
+    <title>Lab</title>
+    <p>Look at <xref ref="sec-lab-tactile-navigation"/></p>
+  </paragraphs>
+  <paragraphs>
+    <title>Notes</title>
+    <p>Link to the notes on <url href="https://hackmd.io/@skiadas/ry6-j2rLq">software architectures</url>.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Reading</title>
+    <p>No new reading, exam on Monday.</p>
+  </paragraphs>
+</section>
