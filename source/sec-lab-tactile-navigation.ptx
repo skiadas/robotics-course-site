@@ -47,5 +47,6 @@
         <p>In addition to the escaping-corners behavior, your bot should also make an end sound and stop moving after one minute of time has passed. You can use the <c>time</c> module and its <c>ticks_ms</c> and <c>ticks_diff</c> functions.</p>
       </statement>
     </exercise>
+    <p>This is the third objective for this lab.</p>
   </subsection>
 </section>
