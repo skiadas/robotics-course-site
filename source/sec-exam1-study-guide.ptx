@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-exam1-study-guide" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Study Guide: Exam 1</title>
+  <p>Book sections: 1-4</p>
+  <p>
+    Things to know:
+    <ol>
+      <li>We defined a robot as a <em>physically situated intelligent agent</em>. Explain what those terms mean in this context.</li>
+      <li>What are the 5 major components of any robot? What does each component do?</li>
+      <li>Describe at least 3 qualitatively different situations where the use of a robot over a human is warranted/desired.</li>
+      <li>Describe the terms of closed-loop control and open-loop control and the advantages and disadvantages of each approach.</li>
+      <li>Discuss at a high level the distinctions between automation and autonomy for robot design and the four sliders along which they are typically considered.</li>
+      <li>For each automation vs autonomy slider, discuss the conditions under which we would place a robot towards one end or the other. I.e. explain what the different ends of the sliders stand for.</li>
+      <li>Describe the <em>frame problem</em> of a closed-world assumption setting.</li>
+      <li>Explain what <em>bounded rationality</em> means.</li>
+      <li>What are the three types of robot architectures, and how do they each aim to describe the robot's features?</li>
+      <li>Describe the four primitives involved in robot operations and give examples of each.</li>
+      <li>Describe the differences between the reactive and the deliberative layer, in terms of primitives used, perceptual ability, planning horizon and time scale.</li>
+      <li>The deliberative layer contains four deliberative functions: generating, selecting, implementing and monitoring. Discuss what each function entails.</li>
+      <li>Describe the 5 subsystems of a systems-architecture view of a robot, and their interactions.</li>
+    </ol>
+  </p>
+</section>

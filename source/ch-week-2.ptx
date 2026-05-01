@@ -4,9 +4,8 @@
   <title>Week 2</title>
 
   <introduction>
-    <p>The first week focus on learning the basics of robots and electronics, building our robot.</p>
+    <p>The second week focus on sensing.</p>
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-wk2-d1.ptx" />
 </chapter>
