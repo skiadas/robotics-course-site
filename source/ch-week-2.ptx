@@ -8,4 +8,6 @@
   </introduction>
 
   <!-- include sections -->
+  <xi:include href="sec-wk2-d1.ptx" />
+
 </chapter>

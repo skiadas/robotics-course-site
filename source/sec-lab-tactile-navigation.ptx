@@ -22,8 +22,8 @@
       <statement>
         <p>Set up your speaker to play the Alma Mater, the first two lines in the sheet at least. But do so as follows: You should have an array where each entry is a pair of a note and a number of beats, for example the very first one would be <c>(D4, 1.5)</c>. Then in a for loop you extract these pairs and use the <c>tone</c> function to play the corresponding note for the corresponding duration (remember to multiple the number like 1.5 with the <c>BEATMS</c> factor).</p>
       </statement>
-      <p>This playing is the first objective of this lab.</p>
     </exercise>
+    <p>This playing is the first objective of this lab.</p>
   </subsection>
   <subsection xml:id="subsec-circuits-generals">
     <title>General circuit knowledge</title>
