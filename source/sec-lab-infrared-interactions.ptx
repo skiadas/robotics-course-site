@@ -3,15 +3,44 @@
 <section xml:id="sec-lab-infrared-interaction" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Lab: Infrared Interaction</title>
   <introduction>
-    <p>In this lab we'll learn how to use the infrared sensors and emitters to detect objects and their distance, as well as interact with a remote control.</p>
+    <p>In this lab we'll learn how to use the infrared sensors and emitters to detect objects and their distance.</p>
   </introduction>
   <subsection xml:id="subsec-infrared-navigation">
     <title>Infrared Navigation</title>
     <p>Follow along with the <url href="https://learn.parallax.com/courses/infrared-light-navigation-for-the-cyberbot/">Infrared light navigation for the cyber:bot</url> tutorial.</p>
-    
-  </subsection>
-  <subsection xml:id="subsec-infrared-remote-control">
-    <title>Infrared Remote Control</title>
-    <p>Follow along with the <url href="https://learn.parallax.com/courses/control-your-cyberbot-with-an-infrared-tv-remote/">Control your cyber:bot with an Infrared TV Remote</url> tutorial.</p>
+    <exercise label="ex-infrared-random-with-avoidance">
+      <statement>
+        <p>Your task is the following: Set one of the sensors so that it detects objects in front, and one so that detects drop-offs. Then set your robot to behave as follows:
+          <ul>
+            <li>It picks up a random direction to go to (pick a random angle from 0 to 360 then rotate to that angle -- you can instead do from -180 to 180 then rotate left or right accordingly).</li>
+            <li>It continues in that direction until it either detects an obstacle in front or a drop-off.</li>
+            <li>If it detects an obstacle or a drop-off then it picks a new random direction.</li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <p>This random-navigation behavior is the first objective of this lab.</p>
+    <p>For the second part we revert the sensors to look forward again. But we will now do some work to try to estimate distance.</p>
+    <exercise label="ex-infrared-distance-estimate">
+      <statement>
+        <p>You have so far used the fixed frequency of 37500 for the outgoing signal, but it turns out we can send other frequencies. For this practice, make a list of frequencies from 36000 to 39000 increasing by 500. Then for each frequency issue the <c>ir_detect</c> call, and put the results together into list and print the list.</p>
+        <p>You should now observe that as you move an object further or closer to the bot, a different number of the results is 1. We cn therefore get a rough estimate of how close something is based on how many 1s we have.</p>
+        <p>To wrap up the assignment, make a function that is given the two pin numbers and does the above work for the transmitter/sensor pair connected to those numbers and then adds up the values to create a single number (from 0 to 7 if you've done things right). The closer the object is the closer this number would be to 7.</p>
+      </statement>
+    </exercise>
+    <p>Showing this function in action on both left and right sensor pairs is the second objective of this lab.</p>
+    <exercise label="ex-infrared-following">
+      <statement>
+        <p>Using the distance function you created before, program the robot so that it does the following:
+          <ul>
+            <li>It aims to stay at distance 3 from the object in front of it.</li>
+            <li>If either of the sensors is at a different distance, then the robot move the wheel on that side in an effort to fix this (i.e. move forward if it's further away, or back away if it is too close). The robot may move both wheels of course, if needed.</li>
+            <li>The amount of rotation should be proportional to how far the actual value is from the target of 3. For example if the actual value is 6 (i.e. 6-3=3 away) then the robot should move faster than if the actual value was 4 (i.e. 4-3=1 away).</li>
+            <li>If the robot is backing up (i.e. both motors rotate so that it moves backwards) then it should make a beeping sound.</li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <p>This is the third and final objective for this lab.</p>
   </subsection>
 </section>

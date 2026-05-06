@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-lab-infrared-remote-control" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab: Infrared Remote Control</title>
+  <introduction>
+    <p>In this lab we'll learn how to use a remote control to interact with the bot.</p>
+  </introduction>
+  <subsection xml:id="subsec-infrared-remote-control">
+    <title>Infrared Remote Control</title>
+    <p>Follow along with the <url href="https://learn.parallax.com/courses/control-your-cyberbot-with-an-infrared-tv-remote/">Control your cyber:bot with an Infrared TV Remote</url> tutorial.</p>
+  </subsection>
+</section>
