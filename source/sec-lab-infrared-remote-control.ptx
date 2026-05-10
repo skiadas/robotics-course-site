@@ -8,5 +8,42 @@
   <subsection xml:id="subsec-infrared-remote-control">
     <title>Infrared Remote Control</title>
     <p>Follow along with the <url href="https://learn.parallax.com/courses/control-your-cyberbot-with-an-infrared-tv-remote/">Control your cyber:bot with an Infrared TV Remote</url> tutorial.</p>
+    <exercise label="ex-manual-navigation">
+      <statement>
+        <p>For this practice, navigate your robot through a full rotation around our maze without hitting any walls, and as fast as possible.</p>
+      </statement>
+    </exercise>
+    <p>This is the first objective.</p>
+    <exercise label="ex-manual-navigation-with-acceleration">
+      <statement>
+        <p>Modify the interface so that:
+          <ul>
+            <li>The bot has a certain speed it moves at. Initially at 0.</li>
+            <li>Pressing forward or backward increases or decreases that speed (for as long as it is pressed).</li>
+            <li>Decreasing from speed 0 should make the bot go backwards.</li>
+            <li>The bot would therefore continue to move even when no buttons are pressed.</li>
+            <li>Pressing the forward left/right buttons temporarily increases the speed on one of the wheels in order to turn appropriately. If the robot was moving backwards at the time then the forward left/right buttons do nothing but the backward left/right buttons turn the bot in the appropriate direction as it is moving backwards. Similarly the backward left/right buttons do nothing if the bot is moving forward. If the bot is at speed 0 then all corner direction buttons do nothing.</li>
+            <li>The left/right buttons adjust the speed on both wheels up/down appropriately so that the bot does a sharper turn, for the duration of the key-press. This works in any speed. For example when the bot is moving forward and the right button is pressed, then the left wheel should speed up while the right wheel should slow down.</li>
+          </ul>
+        </p>
+        <p>
+          Navigate your bot around the maze with this setup, without hitting any walls.
+        </p>
+      </statement>
+    </exercise>
+    <p>This is the second objective.</p>
+    <exercise label="ex-manual-navigation-with-music">
+      <statement>
+        <p>Expanding the previous exercise:
+          <ul>
+            <li>One of the other buttons (of your choice) acts as an on/off switch: When it is on the robot accepts movement commands. When it is off the robot stops any movement and doesn't accept any new movement commands.</li>
+            <li>There is an LED light (that you have added with circuits) associated to the state of the on/off switch. It is off if the switch is off, it blinks if the switch is on but the bot is not moving (or almost not moving), or it is constantly lit up if the bot is moving.</li>
+            <li>Another button acts as an on/off switch for sound. When on, the robot beeps as it moves, with different sounds for forward vs backward and no sound if staying put. When off the robot makes no sounds.</li>
+            <li>On the micro:bit screen we see a number from 0 to 9 indicating how fast the bot is moving, with 0 being no movement and 9 being the most movement (forward or backward).</li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <p>This is the third and final objective.</p>
   </subsection>
 </section>

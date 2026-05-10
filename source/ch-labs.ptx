@@ -14,4 +14,5 @@
   <xi:include href="sec-lab-precise-turning.ptx" />
   <xi:include href="sec-lab-tactile-navigation.ptx" />
   <xi:include href="sec-lab-infrared-interactions.ptx" />
+  <xi:include href="sec-lab-infrared-remote-control.ptx" />
 </chapter>

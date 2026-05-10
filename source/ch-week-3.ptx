@@ -2,7 +2,10 @@
 
 <chapter xml:id="ch-week-3" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Week 3</title>
-  <p>
+  <introduction>
+    <p>We now start looking at more elaborate interactions</p>
+  </introduction>
 
-  </p>
+  <xi:include href="sec-wk3-d1.ptx" />
+
 </chapter>
