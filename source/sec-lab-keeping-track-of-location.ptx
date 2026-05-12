@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-lab-keeping-track-of-location" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab: Keeping Track of Location</title>
+  <introduction>
+    <p>In this lab we'll use vectors and finite state automata to keep track of the robot's location and internal state respectively.</p>
+  </introduction>
+  <subsection xml:id="subsec-vectors-for-location">
+    <title>Vectors for location-tracking</title>
+    <p>Our goal here will be to enable the robot to keep track of its location. We will do this as follows:
+      <ul>
+        <li>We imagine the robot starts at a coordinate system where it is situated at the origin and is facing the y axis.</li>
+        <li>At any particular time we can imagine the robot is on some location on the plane, which we can express as a vector from the origin (values measured in inches), and is facing some direction, which we can express as an angle from the horizontal direction. The robot starts at vector <m>\langle 0, 0\rangle</m> and angle of 90 degrees.</li>
+        <li>We will for now allow only two movements for the robot: Moving straight or back, and turning around its center.</li>
+        <li>The turning motion will be changing the angle at which the robot is positioned.</li>
+        <li>The forward or backward motions will be effectively moving the bot for a vector amount in the direction that it is facing (or possibly the opposite of that). The robot's new location then will be the sum of its old vector location and the motion vector.</li>
+      </ul>
+    </p>
+    <exercise label="ex-location-reporting">
+      <statement>
+        <p>For this practice, program your robot so that it is controlled by the forward/backward/left/right keys on the remote control. You may need to first work out some measurements so that you know for how long forward the bot moves if you have it move for an amount of milliseconds. You can skip ramp-up and ramp-down for this problem, so rely on a single rotation speed on the wheels, but you should still do a number of measurements and plot them to make sure they form a line.</p>
+        <p>You will also need to take some measurements to ensure that you know exactly what angle the robot turns for if we make it turn for a specific amount of time.</p>
+        <p>In your code you should use a vector and an angle to store the robot's current location and orientation. Every time the robot moves you need to update those values.</p>
+        <p>At any given point in time the robot is showing in the screen its distance from the origin, rounded to 1 decimal point.</p>
+      </statement>
+    </exercise>
+    <p>Making this work is the first objective.</p>
+    <exercise label="ex-location-with-viewing-mode">
+      <statement>
+        <p>This is an extension of the previous problem, simply adding some reporting. At any given point in time, instead of just showing distance to start, the robot is also showing one piece of information on the LED screen as described below.</p>
+        <p>Choose another button on the controller. Each press of the button moves to the next viewing mode, cycling back at the start:
+          <ul>
+            <li>Showing the x amount of the location vector (rounded to integer value).</li>
+            <li>Showing the y amount of the location vector (rounded to integer value).</li>
+            <li>Showing the angle of the direction the bot is facing, in degrees, rounded to integer value.</li>
+            <li>Showing the distance to the origin, rounded to 1 decimal point.</li>
+            <li>Showing the distance to the angle from the origin to the current location, in degrees, rounded to integer value.</li>
+          </ul>
+        </p>
+        <p>In addition, a second button allows us to reset the robot so that its current location and direction are the initial (origin and direction of the y axis).</p>
+      </statement>
+    </exercise>
+    <p>Making this work is the second objective.</p>
+    <exercise label="ex-moving-to-coordinate-location">
+      <statement>
+        <p>For this lab you will need to use something like an FSA to keep track of the bot state.</p>
+        <p>The bot starts out at an idle state. In that state it is prompting the user with "x:" on the screen and waiting for the user to type in a number of digits, followed by your choice of other special button as an OK button. It then stores this number and also shows it in the screen as it is being formed.</p>
+        <p>There is also a cancel button that completely resets that number so the user can start again.</p>
+        <p>After the first number the robot makes an acceptance sound and now expects a second number, prompting with "y:". Again a cancel button can reset that number.</p>
+        <p>Bonus: pressing the cancel button twice in quick succession should reset everything and go back to entering the x value.</p>
+        <p>After the y value has been entered and the robot acknowledges with another sound, it now navigates itself to those coordinates (having kept track of location as in the first problem, so the coordinates entered are always relative to the original origin and orientation).</p>
+        <p>While in this movement, the robot ignores all key presses.</p>
+        <p>When it gets there, the robot makes one more sound and goes back to expecting user input.</p>
+      </statement>
+    </exercise>
+    <p>Making this work is the third objective.</p>
+    <exercise label="ex-moving-to-coordinate-while-avoiding-obstacle">
+      <statement>
+        <p>This one is harder, don't feel bad if you decide not to go for it.</p>
+        <p>Your robot should have the capabilities of the previous lab but in addition it does its best to avoid obstacles. You can use a single infrared detector in the front as an identifier of "obstacle" when an object is detected within a certain small distance.</p>
+      </statement>
+    </exercise>
+    <p>This is the fourth and final objective.</p>
+  </subsection>
+</section>

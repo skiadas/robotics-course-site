@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-wk3-d2" number="no" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Week 3 day 2</title>
+  <introduction>
+    <p>Vectors, finite state automata.</p>
+  </introduction>
+  <paragraphs>
+    <title>Lab</title>
+    <p>Look at <xref ref="sec-lab-keeping-track-of-location"/></p>
+  </paragraphs>
+  <paragraphs>
+    <title>Notes</title>
+    <p>
+      <ul>
+        <li><url href="https://hackmd.io/ZCoFKN8vRH-77I4CtyNVwQ">Behavior Coordination</url></li>
+      </ul>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Reading</title>
+    <p>Here is the <url href="https://hackmd.io/@skiadas/BJdaNJlP5">reading assignment</url>, on sensors and range-sensing. In your submission reflect on that assignment as well as anything from class.</p>
+  </paragraphs>
+</section>
