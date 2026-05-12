@@ -11,5 +11,6 @@
   <xi:include href="sec-syllabus.ptx" />
   <xi:include href="sec-intro-bot-tutorials.ptx" />
   <xi:include href="sec-exam1-study-guide.ptx" />
+  <xi:include href="sec-exam2-study-guide.ptx" />
 
 </chapter>
