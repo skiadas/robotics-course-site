@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-wk3-d3" number="no" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Week 3 day 3</title>
+  <introduction>
+    <p>Sensing.</p>
+  </introduction>
+  <paragraphs>
+    <title>Lab</title>
+    <p>For now: Set up the <url href="https://learn.parallax.com/courses/cyberbot-roaming-with-the-ping/">sonar sensor navigation</url>.</p>
+  </paragraphs>
+  <paragraphs>
+    <title>Notes</title>
+    <p>
+      <ul>
+        <li><url href="https://hackmd.io/@skiadas/rkHxvb1D9">Sensors</url></li>
+        <li><url href="https://hackmd.io/@skiadas/Syy-cYlD9">Range sensing</url></li>
+      </ul>
+    </p>
+  </paragraphs>
+  <paragraphs>
+    <title>Reading</title>
+    <p>Exam tomorrow, see <xref ref="sec-exam2-study-guide" text="type-global-title" />.</p>
+  </paragraphs>
+</section>
