@@ -8,7 +8,7 @@
     <ol>
       <li>Why were roboticists interested in emulating animal behavior?</li>
       <li>Describe the three levels of a computational theory and in what ways each of them is comparing animal behavior to robot behavior.</li>
-      <li>Reflexive behaviors can be classified broadly in three types: reflexes, taxes, and fixed-action patterns. Describe how each type behaves and provided concrete examples.</li>
+      <li>Reflexive behaviors can be classified broadly in three types: reflexes, taxes, and fixed-action patterns. Describe how each type behaves and provide concrete examples.</li>
       <li>Describe the concept of <em>affordance</em> and provide examples of visual as well as non-visual affordances.</li>
       <li>Describe the four types of innate releasing mechanisms and provide examples.</li>
       <li>Describe the different primitive types of potential fields and in what circumstances each would be appropriate.</li>
@@ -16,7 +16,7 @@
       <li>Describe the main ideas around "subsumption" as a mechanism for coordinating behaviors.</li>
       <li>Describe using a FSA a real-world process (like for example the process of getting your car out of a closed garage and onto the main road).</li>
       <li>Describe the differences between active and passive sensors. Provide examples of each.</li>
-      <li>What are the three types of sensed output? Describe each. (e.g. proprioception is one)</li>
+      <li>What are the three types of sensor usage? Describe each. (e.g. proprioception is one)</li>
       <li>What are the options for sensors involved in odometry? How are they classified in terms of type of output? What are the advantages and disadvantages of each?</li>
       <li>What are the options for proximity sensors? What are the advantages and disadvantages of each?</li>
       <li>Discuss the different color spaces that can be used to represent colors, and how they each measure a color's effect.</li>
