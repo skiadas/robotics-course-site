@@ -16,4 +16,5 @@
   <xi:include href="sec-lab-infrared-interactions.ptx" />
   <xi:include href="sec-lab-infrared-remote-control.ptx" />
   <xi:include href="sec-lab-keeping-track-of-location.ptx" />
+  <xi:include href="sec-lab-ultrasonic-navigation.ptx" />
 </chapter>

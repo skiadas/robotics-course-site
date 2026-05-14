@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-lab-ultrasonic-navigation" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Lab: Using ultrasonics for navigation</title>
+  <introduction>
+    <p>In this lab we'll ultrasonics sensors to detect obstacles..</p>
+  </introduction>
+  <subsection xml:id="subsec-ultrasonic-sensors">
+    <title>Ultrasonic sensors</title>
+    <p>
+      Follow along with the <url href="https://learn.parallax.com/courses/cyberbot-roaming-with-the-ping/">Roaming with the Ping</url> tutorial.
+    </p>
+    <p>
+      The first objective is to show up the bot in action at the end of the tutorial.
+    </p>
+    <exercise label="ex-ultrasonic-with-tracking">
+      <statement>
+        <p>Combine the ultrasonic navigation code with your location-tracking code. You will likely need to modify how movement happens with the ping, to bring it closer to your tracking setup.</p>
+        <p>After one minute of roaming free, the bot should enter a "head home" mode where it uses the location tracking to find its way to where it started (while reasonably avoiding obstacles by going around them).</p>
+      </statement>
+    </exercise>
+    <p>This is the second objective for this lab.</p>
+    <exercise label="ex-ultrasonic-with-tracking-and-remote-control">
+      <statement>
+        <p>Building on the previous objective, incorporate remote-control as follows:
+          <ul>
+            <li>The left-right buttons can be used to directly instruct the bot to turn.</li>
+            <li>There is a button that can trigger the "return to home" behavior early.</li>
+            <li>There is a button that can pause/unpause the bot's movement.</li>
+          </ul>
+        </p>
+      </statement>
+    </exercise>
+    <p>This is the third and last objective for this lab.</p>
+  </subsection>
+</section>
