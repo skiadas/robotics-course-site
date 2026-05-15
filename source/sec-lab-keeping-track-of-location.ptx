@@ -34,7 +34,7 @@
             <li>Showing the y amount of the location vector (rounded to integer value).</li>
             <li>Showing the angle of the direction the bot is facing, in degrees, rounded to integer value.</li>
             <li>Showing the distance to the origin, rounded to 1 decimal point.</li>
-            <li>Showing the distance to the angle from the origin to the current location, in degrees, rounded to integer value.</li>
+            <li>Showing the angle from the origin to the current location, in degrees, rounded to integer value.</li>
           </ul>
         </p>
         <p>In addition, a second button allows us to reset the robot so that its current location and direction are the initial (origin and direction of the y axis).</p>
